@@ -9,7 +9,7 @@ Each example is based on an actual transaction made on the Nexa network, simulat
 ### Popular blockchain explorers include
 
 - [Explorer by Bitcoin.com](https://explorer.bitcoin.com/bch)
-- [Blockchair](https://blockchair.com/bitcoin-cash/blocks)
+- [Blockchair](https://blockchair.com/nexa/blocks)
 
 Each of these has a search function that can take an address, transaction hash, or block number and find the equivalent data on the Nexa network and blockchain. With each example, we will provide a URL that takes you directly to the relevant entry, so you can study it in detail.
 
@@ -18,7 +18,7 @@ Each of these has a search function that can take an address, transaction hash, 
 In the overview diagram below, we see that the Nexa system consists of users with wallets containing keys, transactions that are propagated across the network, and miners who produce (through competitive computation) the consensus blockchain, which is the authoritative ledger of all transactions. In this chapter, we will trace a single transaction as it travels across the network and examine the interactions between each part of the Nexa system, at a high level. Subsequent chapters will delve into the technology behind wallets, mining, and merchant systems.
 
 <spacer></spacer>
-![Nexa Overview](/images/mastering-bitcoin-cash/msbt_0201.png)
+![Nexa Overview](/images/mastering-nexa/msbt_0201.png)
 <image-caption>Figure 1. Nexa overview</image-caption>
 
 #### Buying a Cup of Coffee
@@ -33,7 +33,7 @@ Total:
 
 <anchor name="payment-request-QR"></anchor>
 <spacer></spacer>
-![payment-request-image](/images/mastering-bitcoin-cash/msbt_02_receive.png)
+![payment-request-image](/images/mastering-nexa/msbt_02_receive.png)
 <image-caption>Figure 2. Payment request QR code (Hint: Try to scan this!)</image-caption>
 <spacer></spacer>
 
@@ -59,12 +59,12 @@ The transaction also contains proof of ownership for each amount of Nexa (inputs
 
 <anchor name="transaction-double-entry"></anchor>
 <spacer></spacer>
-![TransactionDoubleEntry](/images/mastering-bitcoin-cash/transaction-as-double-entry-bookkepping.png)
+![TransactionDoubleEntry](/images/mastering-nexa/transaction-as-double-entry-bookkepping.png)
 <image-caption>Figure 3. Transaction as double-entry bookkeeping</image-caption>
 
 <anchor name="blockchain-mnemonic"></anchor>
 <spacer></spacer>
-![Transaction chain](/images/mastering-bitcoin-cash/chain-of-transactions.png)
+![Transaction chain](/images/mastering-nexa/chain-of-transactions.png)
 <image-caption>Figure 4. A chain of transactions, where the output of one transaction is the input of the next transaction</image-caption>
 <spacer></spacer>
 
@@ -76,7 +76,7 @@ The most common form of transaction is a simple payment from one address to anot
 
 <anchor name="transaction-common"></anchor>
 <spacer></spacer>
-![Common Transaction](/images/mastering-bitcoin-cash/msbt_0205.png)
+![Common Transaction](/images/mastering-nexa/msbt_0205.png)
 <image-caption>Figure 5. Most common transaction</image-caption>
 <spacer></spacer>
 
@@ -84,7 +84,7 @@ Another common form of transaction is one that aggregates several inputs into a 
 
 <anchor name="transaction-aggregating"></anchor>
 <spacer></spacer>
-![Aggregating Transaction](/images/mastering-bitcoin-cash/msbt_0206.png)
+![Aggregating Transaction](/images/mastering-nexa/msbt_0206.png)
 <image-caption>Figure 6. Transaction aggregating funds</image-caption>
 <spacer></spacer>
 
@@ -92,7 +92,7 @@ Finally, another transaction form that is seen often on the Nexa ledger is a tra
 
 <anchor name="transaction-distributing"></anchor>
 <spacer></spacer>
-![Distributing Transaction](/images/mastering-bitcoin-cash/msbt_0207.png)
+![Distributing Transaction](/images/mastering-nexa/msbt_0207.png)
 <image-caption>Figure 7. Transaction distributing funds</image-caption>
 
 ### Constructing a Transaction
@@ -151,7 +151,7 @@ The resulting transaction can be seen using a blockchain explorer web applicatio
 
 <anchor name="transaction-alice"></anchor>
 <spacer></spacer>
-![Alice Coffee Transaction](/images/mastering-bitcoin-cash/msbt_02-tx-screenshot.png)
+![Alice Coffee Transaction](/images/mastering-nexa/msbt_02-tx-screenshot.png)
 <image-caption>Figure 8. Alice’s transaction to Bob’s Cafe</image-caption>
 
 <tip>
@@ -182,7 +182,7 @@ If Bob’s Nexa wallet application is directly connected to Alice’s wallet app
 
 ### Nexa Mining
 
-The transaction is now propagated on the Nexa network. It does not become part of the shared ledger (the _blockchain_) until it is verified and included in a block by a process called _mining_. See [Mining and Consensus](/mastering-bitcoin-cash/7-mining-and-consensus/) for a detailed explanation.
+The transaction is now propagated on the Nexa network. It does not become part of the shared ledger (the _blockchain_) until it is verified and included in a block by a process called _mining_. See [Mining and Consensus](/mastering-nexa/7-mining-and-consensus/) for a detailed explanation.
 
 The Nexa system of trust is based on computation. Transactions are bundled into _blocks_, which require an enormous amount of computation to prove, but only a small amount of computation to verify as proven. The mining process serves two purposes in Nexa:
 
@@ -197,7 +197,7 @@ Jing started mining in 2010 using a very fast desktop computer to find a suitabl
 
 ### Mining Transactions in Blocks
 
-A transaction transmitted across the network is not verified until it becomes part of the global distributed ledger, the blockchain. Every 10 minutes on average, miners generate a new block that contains all the transactions since the last block. New transactions are constantly flowing into the network from user wallets and other applications. As these are seen by the Nexa network nodes, they get added to a temporary pool of unverified transactions maintained by each node. As miners build a new block, they add unverified transactions from this pool to a new block and then attempt to solve a very hard problem (a.k.a., proof of work) to prove the validity of that new block. The process of mining is explained in detail in [Mining and Consensus](/mastering-bitcoin-cash/7-mining-and-consensus/).
+A transaction transmitted across the network is not verified until it becomes part of the global distributed ledger, the blockchain. Every 10 minutes on average, miners generate a new block that contains all the transactions since the last block. New transactions are constantly flowing into the network from user wallets and other applications. As these are seen by the Nexa network nodes, they get added to a temporary pool of unverified transactions maintained by each node. As miners build a new block, they add unverified transactions from this pool to a new block and then attempt to solve a very hard problem (a.k.a., proof of work) to prove the validity of that new block. The process of mining is explained in detail in [Mining and Consensus](/mastering-nexa/7-mining-and-consensus/).
 
 Transactions are added to the new block, prioritized by the highest-fee transactions first and a few other criteria. Each miner starts the process of mining a new block of transactions as soon as he receives the previous block from the network, knowing he has lost that previous round of competition. He immediately creates a new block, fills it with transactions and the fingerprint of the previous block, and starts calculating the proof of work for the new block. Each miner includes a special transaction in his block, one that pays his own bitcoin cash address a reward of newly created bitcoins (currently 12.5 NEXA per block). If he finds a solution that makes that block valid, he "wins" this reward because his successful block is added to the global blockchain and the reward transaction he included becomes spendable. Jing, who participates in a mining pool, has set up his software to create new blocks that assign the reward to a pool address. From there, a share of the reward is distributed to Jing and other miners in proportion to the amount of work they contributed in the last round.
 
@@ -211,7 +211,7 @@ In the diagram in [Alice’s transaction included in block #538345](#block-alice
 
 <anchor name="block-alice1"></anchor>
 <spacer></spacer>
-![Alice’s transaction included in a block](/images/mastering-bitcoin-cash/transaction-included-in-a-block.png)
+![Alice’s transaction included in a block](/images/mastering-nexa/transaction-included-in-a-block.png)
 <image-caption>Figure 9. Alice’s transaction included in block #538345</image-caption>
 <spacer></spacer>
 
@@ -225,6 +225,6 @@ As Bob spends the payments received from Alice and other customers, he extends t
 
 <anchor name="block-alice2"></anchor>
 <spacer></spacer>
-![Alice’s transaction as part of a transaction chain](/images/mastering-bitcoin-cash/msbt_0210.png)
+![Alice’s transaction as part of a transaction chain](/images/mastering-nexa/msbt_0210.png)
 <image-caption>Figure 10. Alice’s transaction as part of a transaction chain from Joe to Gopesh</image-caption>
 <spacer></spacer>

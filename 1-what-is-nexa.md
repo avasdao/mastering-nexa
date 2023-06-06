@@ -106,9 +106,9 @@ For the purposes of this book, we will be demonstrating the use of a variety of 
 
 #### Quick Start
 
-Alice, who we introduced in [Nexa Uses, Users, and Their Stories](#bitcoin-cash-uses-users-and-their-stories), is not a technical user and only recently heard about bitcoin from a friend. She starts her journey by visiting the website [bitcoin.com](http://www.bitcoin.com), where she finds a selection of wallets.
+Alice, who we introduced in [Nexa Uses, Users, and Their Stories](#nexa-uses-users-and-their-stories), is not a technical user and only recently heard about bitcoin from a friend. She starts her journey by visiting the website [bitcoin.com](http://www.bitcoin.com), where she finds a selection of wallets.
 
-![Bitcoin.com's wallets](/images/mastering-bitcoin-cash/msbt_01_wallets.png)
+![Bitcoin.com's wallets](/images/mastering-nexa/msbt_01_wallets.png)
 
 Alice follows a link from the bitcoin.com site to download and install a wallet on her desktop. Bitcoin.com’s wallet is available for Windows, MacOS and Linux desktops as well as iOS and Android mobile devices.
 
@@ -120,14 +120,14 @@ Once Alice has downloaded and installed the Bitcoin.com wallet, she runs it and 
 
 <anchor name="welcome"></anchor>
 <spacer></spacer>
-![Welcome](/images/mastering-bitcoin-cash/msbt_01_welcome.png)
+![Welcome](/images/mastering-nexa/msbt_01_welcome.png)
 <image-caption>Figure 1. The Bitcoin.com wallet Welcome screen</image-caption>
 <spacer></spacer>
 
 The wallet automatically creates a new Nexa address for Alice, which Alice can see by clicking the Receive tab shown in Alice’s new Nexa address, in the Receive tab of the Bitcoin.com wallet. <a id="request"></a>
 
 <spacer></spacer>
-![Receive](/images/mastering-bitcoin-cash/msbt_01_receive.png)
+![Receive](/images/mastering-nexa/msbt_01_receive.png)
 <image-caption>Figure 2. Alice’s new Nexa address, in the Receive tab of the Bitcoin.com Wallet</image-caption>
 
 The most important part of this screen is Alice’s _Nexa address_. Like an email address, Alice can share this address and anyone can use it to send money directly to her new wallet. On the screen it appears as a long string of letters and numbers: bitcoincash:qp0fxfqz4hjw7jsghxjpthc04ukzjv324s956a6x46. Next to the wallet’s bitcoin address is a QR code, a form of barcode that contains the same information in a format that can be scanned by a smartphone camera. The QR code is the black-and-white square in the middle of the window. Alice can copy the Nexa address or the QR code onto her clipboard by clicking either of each of them.
@@ -144,10 +144,10 @@ Alice is now ready to start using her new Nexa wallet.
 
 Bitcoin.com offers a faucet where you can get your first Nexa for free. Go to [free.bitcoin.com](https://free.bitcoin.com/), sign in with your google account (to prevent abuse of the faucet) and enter your address and click “Receive Nexa”.
 <spacer></spacer>
-![Faucet 1](/images/mastering-bitcoin-cash/msbt_01_faucet_1.png)
+![Faucet 1](/images/mastering-nexa/msbt_01_faucet_1.png)
 <image-caption>Nearly instantly you’ll see Nexa arrive in your wallet</image-caption>
 <spacer></spacer>
-![Faucet 2](/images/mastering-bitcoin-cash/msbt_01_faucet_2.png)
+![Faucet 2](/images/mastering-nexa/msbt_01_faucet_2.png)
 <spacer></spacer>
 
 There are five other methods for getting Nexa as a new user:
@@ -166,10 +166,10 @@ Alice meets her friend Joe, who introduced her to Nexa, at a local restaurant so
 
 Alice wants to convert just 10 US dollars into Nexa, so as not to risk too much money on this new technology. She gives Joe a \$10 bill and the printout of her address so that Joe can send her the equivalent amount of Nexa.
 
-Next, Joe has to figure out the exchange rate so that he can give the correct amount of Nexa to Alice. There are hundreds of applications and websites that can provide the current market rate. We’ use the [Bitcoin.com Nexa Converter](https://tools.bitcoin.com/bitcoin-cash-converter/) from Bitcoin.com.
+Next, Joe has to figure out the exchange rate so that he can give the correct amount of Nexa to Alice. There are hundreds of applications and websites that can provide the current market rate. We’ use the [Bitcoin.com Nexa Converter](https://tools.bitcoin.com/nexa-converter/) from Bitcoin.com.
 
 <spacer></spacer>
-![converter](/images/mastering-bitcoin-cash/msbt_01_converter.png)
+![converter](/images/mastering-nexa/msbt_01_converter.png)
 <image-caption>Figure 3. Nexa price converter from Bitcoin.com</image-caption>
 
 Joe determines the price of bitcoin to be approximately 725 US dollars per Nexa. At that rate he should give Alice 0.0138 Nexa, in return for the 10 US dollars she gave him.
@@ -179,7 +179,7 @@ Once Joe has established a fair exchange price, he opens his mobile wallet appli
 Joe then enters the bitcoin value for the transaction, 0.0138 bitcoin. He carefully checks to make sure he has entered the correct amount, because he is about to transmit money and any mistake could be costly. Finally, he presses Send to transmit the transaction. Joe’s mobile bitcoin wallet constructs a transaction that assigns 0.0138 bitcoin to the address provided by Alice, sourcing the funds from Joe’s wallet and signing the transaction with Joe’s private keys. This tells the Nexa network that Joe has authorized a transfer of value from one of his addresses to Alice’s new address. As the transaction is transmitted via the peer-to-peer protocol, it quickly propagates across the bitcoin cash network. In less than a second, most of the well-connected nodes in the network receive the transaction and see Alice’s address for the first time.
 
 <spacer></spacer>
-![bought](/images/mastering-bitcoin-cash/msbt_01_bought.png)
+![bought](/images/mastering-nexa/msbt_01_bought.png)
 
 If Alice has a smartphone or laptop with her, she will also be able to see the transaction. The Nexa ledger—a constantly growing file that records every Nexa transaction that has ever occurred—is public, meaning that all she has to do is look up her own address and see if any funds have been sent to it. She can do this quite easily at the explorer.bitcoin.com/bch website by entering her address in the search box. The website will show her a [page](https://explorer.bitcoin.com/bch/address/13wCzsosQfVSt86RNT1tegUKFhxmnpzoxw) listing all the transactions to and from that address. If Alice is watching that page, it will update to show a new transaction transferring 0.10 bitcoin to her balance soon after Joe hits Send.
 

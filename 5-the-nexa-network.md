@@ -14,7 +14,7 @@ Although nodes in the Nexa P2P network are equal, they may take on different rol
 
 <anchor name="full_node_reference"></anchor>
 <spacer></spacer>
-![FullNodeReferenceClient_Small](/images/mastering-bitcoin-cash/msbt_0601.png)
+![FullNodeReferenceClient_Small](/images/mastering-nexa/msbt_0601.png)
 <image-caption>Figure 1. A Nexa network node with all four functions: wallet, miner, full blockchain database, and network routing</image-caption>
 <spacer></spacer>
 
@@ -40,12 +40,12 @@ The extended Nexa network includes the network running the Nexa P2P protocol, de
 
 <anchor name="bitcoin_node_types"></anchor>
 <spacer></spacer>
-![BitcoinNodeTypes](/images//mastering-bitcoin-cash/msbt_0602.png)
+![BitcoinNodeTypes](/images//mastering-nexa/msbt_0602.png)
 <image-caption>Figure 2. Different types of nodes on the extended Nexa network</image-caption>
 
 <anchor name="bitcoin_network"></anchor>
 <spacer></spacer>
-![BitcoinNetwork](/images//mastering-bitcoin-cash/msbt_0603.png)
+![BitcoinNetwork](/images//mastering-nexa/msbt_0603.png)
 <image-caption>Figure 3. The extended Nexa network showing various node types, gateways, and protocols</image-caption>
 <spacer></spacer>
 
@@ -84,7 +84,7 @@ Alternatively, a bootstrapping node that knows nothing of the network must be gi
 
 <anchor name="network_handshake"></anchor>
 <spacer></spacer>
-![NetworkHandshake](/images/mastering-bitcoin-cash/msbt_0604.png)
+![NetworkHandshake](/images/mastering-nexa/msbt_0604.png)
 <image-caption>Figure 4. The initial handshake between peers</image-caption>
 <spacer></spacer>
 
@@ -92,7 +92,7 @@ Once one or more connections are established, the new node will send an addr mes
 
 <anchor name="address_propagation"></anchor>
 <spacer></spacer>
-![AddressPropagation](/images/mastering-bitcoin-cash/msbt_0605.png)
+![AddressPropagation](/images/mastering-nexa/msbt_0605.png)
 <image-caption>Figure 5. Address propagation and discovery</image-caption>
 <spacer></spacer>
 
@@ -188,7 +188,7 @@ The process of syncing the blockchain starts with the version message, because t
 
 The peer that has the longer blockchain has more blocks than the other node and can identify which blocks the other node needs in order to "catch up." It will identify the first 500 blocks to share and transmit their hashes using an inv (inventory) message. The node missing these blocks will then retrieve them, by issuing a series of getdata messages requesting the full block data and identifying the requested blocks using the hashes from the inv message.
 
-Let’s assume, for example, that a node only has the genesis block. It will then receive an inv message from its peers containing the hashes of the next 500 blocks in the chain. It will start requesting blocks from all of its connected peers, spreading the load and ensuring that it doesn’t overwhelm any peer with requests. The node keeps track of how many blocks are "in transit" per peer connection, meaning blocks that it has requested but not received, checking that it does not exceed a limit (MAX_BLOCKS_IN_TRANSIT_PER_PEER). This way, if it needs a lot of blocks, it will only request new ones as previous requests are fulfilled, allowing the peers to control the pace of updates and not overwhelming the network. As each block is received, it is added to the blockchain, as we will see in [The Blockchain](/mastering-bitcoin-cash/6-the-blockchain/). As the local blockchain is gradually built up, more blocks are requested and received, and the process continues until the node catches up to the rest of the network.
+Let’s assume, for example, that a node only has the genesis block. It will then receive an inv message from its peers containing the hashes of the next 500 blocks in the chain. It will start requesting blocks from all of its connected peers, spreading the load and ensuring that it doesn’t overwhelm any peer with requests. The node keeps track of how many blocks are "in transit" per peer connection, meaning blocks that it has requested but not received, checking that it does not exceed a limit (MAX_BLOCKS_IN_TRANSIT_PER_PEER). This way, if it needs a lot of blocks, it will only request new ones as previous requests are fulfilled, allowing the peers to control the pace of updates and not overwhelming the network. As each block is received, it is added to the blockchain, as we will see in [The Blockchain](/mastering-nexa/6-the-blockchain/). As the local blockchain is gradually built up, more blocks are requested and received, and the process continues until the node catches up to the rest of the network.
 
 This process of comparing the local blockchain with the peers and retrieving any missing blocks happens any time a node goes offline for any period of time. Whether a node has been offline for a few minutes and is missing a few blocks, or a month and is missing a few thousand blocks, it starts by sending getblocks, gets an inv response, and starts downloading the missing blocks. [Node synchronizing the blockchain by retrieving blocks from a peer](#inventory_synchronization) shows the inventory and block propagation protocol.
 
@@ -200,7 +200,7 @@ SPV nodes download only the block headers and do not download the transactions i
 
 <anchor name="inventory_synchronization"></anchor>
 <spacer></spacer>
-![InventorySynchronization](/images/mastering-bitcoin-cash/msbt_0606.png)
+![InventorySynchronization](/images/mastering-nexa/msbt_0606.png)
 <image-caption>Figure 6. Node synchronizing the blockchain by retrieving blocks from a peer</image-caption>
 <spacer></spacer>
 
@@ -222,7 +222,7 @@ To get the block headers, SPV nodes use a getheaders message instead of getblock
 
 <anchor name="spv_synchronization"></anchor>
 <spacer></spacer>
-![SPVSynchronization](/images/mastering-bitcoin-cash/msbt_0607.png)
+![SPVSynchronization](/images/mastering-nexa/msbt_0607.png)
 <image-caption>Figure 7. SPV node synchronizing the block headers</image-caption>
 <spacer></spacer>
 
@@ -246,7 +246,7 @@ In [An example of a simplistic bloom filter, with a 16-bit field and three hash 
 
 <anchor name="bloom1"></anchor>
 <spacer></spacer>
-![Bloom1](/images/mastering-bitcoin-cash/msbt_0608.png)
+![Bloom1](/images/mastering-nexa/msbt_0608.png)
 <image-caption>Figure 8. An example of a simplistic bloom filter, with a 16-bit field and three hash functions</image-caption>
 <spacer></spacer>
 
@@ -258,7 +258,7 @@ Adding a second pattern is as simple as repeating this process. The pattern is h
 
 <anchor name="bloom1"></anchor>
 <spacer></spacer>
-![Bloom2](/images/mastering-bitcoin-cash/msbt_0609.png)
+![Bloom2](/images/mastering-nexa/msbt_0609.png)
 <image-caption>Figure 9. Adding a pattern "A" to our simple bloom filter</image-caption>
 <spacer></spacer>
 
@@ -266,7 +266,7 @@ Adding a second pattern is as simple as repeating this process. The pattern is h
 
 <anchor name="bloom3"></anchor>
 <spacer></spacer>
-![Bloom3](/images/mastering-bitcoin-cash/msbt_0610.png)
+![Bloom3](/images/mastering-nexa/msbt_0610.png)
 <image-caption>Figure 10. Adding a second pattern "B" to our simple bloom filter</image-caption>
 <spacer></spacer>
 
@@ -276,7 +276,7 @@ To test if a pattern is part of a bloom filter, the pattern is hashed by each ha
 
 <anchor name="bloom4"></anchor>
 <spacer></spacer>
-![Bloom4](/images/mastering-bitcoin-cash/msbt_0611.png)
+![Bloom4](/images/mastering-nexa/msbt_0611.png)
 <image-caption>Figure 11. Testing the existence of pattern "X" in the bloom filter. The result is probabilistic positive match, meaning "Maybe."</image-caption>
 <spacer></spacer>
 
@@ -286,7 +286,7 @@ On the contrary, if a pattern is tested against the bloom filter and any one of 
 
 <anchor name="bloom5"></anchor>
 <spacer></spacer>
-![msbt 0612](/images/mastering-bitcoin-cash/msbt_0612.png)
+![msbt 0612](/images/mastering-nexa/msbt_0612.png)
 <image-caption>Figure 12. Testing the existence of pattern "Y" in the bloom filter. The result is a definitive negative match, meaning "Definitely Not!"</image-caption>
 <spacer></spacer>
 

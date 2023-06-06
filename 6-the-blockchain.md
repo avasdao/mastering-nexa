@@ -161,7 +161,7 @@ A _merkle tree_, also known as a _binary hash tree_, is a data structure used fo
 
 <anchor name="chain_or_blocks"></anchor>
 <spacer></spacer>
-![msbt 0701](/images//mastering-bitcoin-cash/msbt_0701.png)
+![msbt 0701](/images//mastering-nexa/msbt_0701.png)
 <image-caption>Figure 1. Blocks linked in a chain, by reference to the previous block header hash</image-caption>
 <spacer></spacer>
 
@@ -185,7 +185,7 @@ The process continues until there is only one node at the top, the node known as
 
 <anchor name="merkle_tree"></anchor>
 <spacer></spacer>
-![merkle_tree](/images/mastering-bitcoin-cash/msbt_0702.png)
+![merkle_tree](/images/mastering-nexa/msbt_0702.png)
 <image-caption>Figure 2. Calculating the nodes in a merkle tree</image-caption>
 <spacer></spacer>
 
@@ -193,7 +193,7 @@ Because the merkle tree is a binary tree, it needs an even number of leaf nodes.
 
 <anchor name="merkle_tree_odd"></anchor>
 <spacer></spacer>
-![merkle_tree_odd](/images/mastering-bitcoin-cash/msbt_0703.png)
+![merkle_tree_odd](/images/mastering-nexa/msbt_0703.png)
 <image-caption>Figure 3. Duplicating one data element achieves an even number of data elements</image-caption>
 <spacer></spacer>
 
@@ -203,7 +203,7 @@ To prove that a specific transaction is included in a block, a node only needs t
 
 <anchor name="merkle_tree_large"></anchor>
 <spacer></spacer>
-![merkle_tree_large](/images/mastering-bitcoin-cash/msbt_0704.png)
+![merkle_tree_large](/images/mastering-nexa/msbt_0704.png)
 <image-caption>Figure 4. A merkle tree summarizing many data elements</image-caption>
 <spacer></spacer>
 
@@ -211,7 +211,7 @@ In [A merkle path used to prove inclusion of a data element](#merkle_tree_path),
 
 <anchor name="merkle_tree_path"></anchor>
 <spacer></spacer>
-![merkle_tree_path](/images/mastering-bitcoin-cash/msbt_0705.png)
+![merkle_tree_path](/images/mastering-nexa/msbt_0705.png)
 <image-caption>Figure 5. A merkle path used to prove inclusion of a data element</image-caption>
 <spacer></space
 

@@ -76,7 +76,7 @@ As with real life, the Nexa application can use several strategies to satisfy th
 
 The UTXO consumed by a transaction are called transaction inputs, and the UTXO created by a transaction are called transaction outputs. This way, chunks of Nexa value move forward from owner to owner in a chain of transactions consuming and creating UTXO. Transactions consume UTXO by unlocking it with the signature of the current owner and create UTXO by locking it to the Nexa address of the new owner.
 
-The exception to the output and input chain is a special type of transaction called the _coinbase_ transaction, which is the first transaction in each block. This transaction is placed there by the "winning" miner and creates brand-new Nexa payable to that miner as a reward for mining. This is how Nexa’s money supply is created during the mining process, as we will see in [Mining and Consensus](/mastering-bitcoin-cash/7-mining-and-consensus/).
+The exception to the output and input chain is a special type of transaction called the _coinbase_ transaction, which is the first transaction in each block. This transaction is placed there by the "winning" miner and creates brand-new Nexa payable to that miner as a reward for mining. This is how Nexa’s money supply is created during the mining process, as we will see in [Mining and Consensus](/mastering-nexa/7-mining-and-consensus/).
 
 <tip>
   What comes first? Inputs or outputs, the chicken or the egg? Strictly speaking, outputs come first because coinbase transactions, which generate new Nexa, have no inputs and create outputs from nothing.
@@ -167,13 +167,13 @@ Once the UTXO is selected, the wallet then produces unlocking scripts containing
 
 #### Transaction Fees
 
-Most transactions include transaction fees, which compensate the Nexa miners for securing the network. Mining and the fees and rewards collected by miners are discussed in more detail in [Mining and Consensus](/mastering-bitcoin-cash/7-mining-and-consensus/). This section examines how transaction fees are included in a typical transaction. Most wallets calculate and include transaction fees automatically. However, if you are constructing transactions programmatically, or using a command-line interface, you must manually account for and include these fees.
+Most transactions include transaction fees, which compensate the Nexa miners for securing the network. Mining and the fees and rewards collected by miners are discussed in more detail in [Mining and Consensus](/mastering-nexa/7-mining-and-consensus/). This section examines how transaction fees are included in a typical transaction. Most wallets calculate and include transaction fees automatically. However, if you are constructing transactions programmatically, or using a command-line interface, you must manually account for and include these fees.
 
 Transaction fees serve as an incentive to include (mine) a transaction into the next block and also as a disincentive against "spam" transactions or any kind of abuse of the system, by imposing a small cost on every transaction. Transaction fees are collected by the miner who mines the block that records the transaction on the blockchain.
 
 Transaction fees are calculated based on the size of the transaction in kilobytes, not the value of the transaction in Nexa. Overall, transaction fees are set based on market forces within the Nexa network. Miners prioritize transactions based on many different criteria, including fees, and might even process transactions for free under certain circumstances. Transaction fees affect the processing priority, meaning that a transaction with sufficient fees is likely to be included in the next-most–mined block, whereas a transaction with insufficient or no fees might be delayed, processed on a best-effort basis after a few blocks, or not processed at all. Transaction fees are not mandatory, and transactions without fees might be processed eventually; however, including transaction fees encourages priority processing.
 
-The current algorithm used by miners to prioritize transactions for inclusion in a block based on their fees is examined in detail in [Mining and Consensus](/mastering-bitcoin-cash/7-mining-and-consensus/).
+The current algorithm used by miners to prioritize transactions for inclusion in a block based on their fees is examined in detail in [Mining and Consensus](/mastering-nexa/7-mining-and-consensus/).
 
 #### Adding Fees to Transactions
 
@@ -233,7 +233,7 @@ First, the unlocking script is executed, using the stack execution engine. If th
 
 <anchor name="scriptSig_and_scriptPubKey"></anchor>
 <spacer></spacer>
-![scriptSig_and_scriptPubKey](/images/mastering-bitcoin-cash/msbt_0501.png)
+![scriptSig_and_scriptPubKey](/images/mastering-nexa/msbt_0501.png)
 <image-caption>Figure 1. Combining scriptSig and scriptPubKey to evaluate a transaction script</image-caption>
 <spacer></spacer>
 
@@ -281,7 +281,7 @@ As we saw in the step-by-step example in [Nexa’s script validation doing simpl
 
 <anchor name="simplemath_script"></anchor>
 <spacer></spacer>
-![TxScriptSimpleMathExample](/images/mastering-bitcoin-cash/msbt_0502.png)
+![TxScriptSimpleMathExample](/images/mastering-nexa/msbt_0502.png)
 <image-caption>Figure 2. Nexa’s script validation doing simple math</image-caption>
 <spacer></spacer>
 
@@ -336,7 +336,7 @@ Figures and show (in two parts) a step-by-step execution of the combined script,
 
 <anchor name="script_p2pkh"></anchor>
 <spacer></spacer>
-![Tx_Script_P2PubKeyHash_1](/images/mastering-bitcoin-cash/msbt_0503.png)
+![Tx_Script_P2PubKeyHash_1](/images/mastering-nexa/msbt_0503.png)
 <image-caption>Figure 3. Evaluating a script for a P2PKH transaction (Part 1 of 2)</image-caption>
 <spacer></spacer>
 
@@ -366,7 +366,7 @@ This script is a simple invocation of the CHECKSIG operator, which validates the
 
 <anchor name="script_p2pkh2"></anchor>
 <spacer></spacer>
-![Tx_Script_P2PubKeyHash_2](/images/mastering-bitcoin-cash/msbt_0504.png)
+![Tx_Script_P2PubKeyHash_2](/images/mastering-nexa/msbt_0504.png)
 <image-caption>Figure 4. Evaluating a script for a P2PKH transaction (Part 2 of 2)</image-caption>
 <spacer></spacer>
 
@@ -436,7 +436,7 @@ A standard transaction (one that conforms to the isStandard() checks) can have o
 
 Pay-to-script-hash (P2SH) was introduced in 2012 as a powerful new type of transaction that greatly simplifies the use of complex transaction scripts. To explain the need for P2SH, let’s look at a practical example.
 
-In [What is Nexa](/mastering-bitcoin-cash/1-what-is-bitcoin-cash/) we introduced Mohammed, an electronics importer based in Dubai. Mohammed’s company uses Nexa’s multi-signature feature extensively for its corporate accounts. Multi-signature scripts are one of the most common uses of Nexa’s advanced scripting capabilities and are a very powerful feature. Mohammed’s company uses a multi-signature script for all customer payments, known in accounting terms as "accounts receivable," or AR. With the multi-signature scheme, any payments made by customers are locked in such a way that they require at least two signatures to release, from Mohammed and one of his partners or from his attorney who has a backup key. A multi-signature scheme like that offers corporate governance controls and protects against theft, embezzlement, or loss.
+In [What is Nexa](/mastering-nexa/1-what-is-nexa/) we introduced Mohammed, an electronics importer based in Dubai. Mohammed’s company uses Nexa’s multi-signature feature extensively for its corporate accounts. Multi-signature scripts are one of the most common uses of Nexa’s advanced scripting capabilities and are a very powerful feature. Mohammed’s company uses a multi-signature script for all customer payments, known in accounting terms as "accounts receivable," or AR. With the multi-signature scheme, any payments made by customers are locked in such a way that they require at least two signatures to release, from Mohammed and one of his partners or from his attorney who has a backup key. A multi-signature scheme like that offers corporate governance controls and protects against theft, embezzlement, or loss.
 
 The resulting script is quite long and looks like this:
 

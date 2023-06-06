@@ -32,7 +32,7 @@ A Nexa wallet contains a collection of key pairs, each consisting of a private k
 
 <anchor name="k_to_K_to_A"></anchor>
 <spacer></spacer>
-![payment-request-image](/images/mastering-bitcoin-cash/msbt_0401.png)
+![payment-request-image](/images/mastering-nexa/msbt_0401.png)
 <image-caption>Figure 1. Private key, public key, and Nexa address</image-caption>
 <spacer></spacer>
 
@@ -74,7 +74,7 @@ Elliptic curve cryptography is a type of asymmetric or public-key cryptography b
 
 <anchor name="ecc-curve"></anchor>
 <spacer></spacer>
-![ecc-curve](/images/mastering-bitcoin-cash/msbt_0402.png)
+![ecc-curve](/images/mastering-nexa/msbt_0402.png)
 <image-caption>Figure 2. An elliptic curve</image-caption>
 <spacer></spacer>
 
@@ -94,7 +94,7 @@ Because this curve is defined over a finite field of prime order instead of over
 
 <anchor name="ecc-over-F17-math"></anchor>
 <spacer></spacer>
-![ecc over F17 math](/images/mastering-bitcoin-cash/msbt_0403.png)
+![ecc over F17 math](/images/mastering-nexa/msbt_0403.png)
 <image-caption>Figure 3. Elliptic curve cryptography: visualizing an elliptic curve over F(p), with p=17</image-caption>
 <spacer></spacer>
 
@@ -173,7 +173,7 @@ Most Nexa implementations use the <link to="http://bit.ly/1ql7bn8" text="OpenSSL
 
 <anchor name="ecc-illustrated"></anchor>
 <spacer></spacer>
-![ecc_illustrated](/images/mastering-bitcoin-cash/msbt_0404.png)
+![ecc_illustrated](/images/mastering-nexa/msbt_0404.png)
 <image-caption>Figure 4. Elliptic curve cryptography: Visualizing the multiplication of a point G by an integer k on an elliptic curve</image-caption>
 <spacer></spacer>
 
@@ -205,7 +205,7 @@ Legacy Nexa addresses are almost always presented to users in an encoding called
 
 <anchor name="pubkey_to_adress>
 <spacer></spacer>
-![pubkey to address](/images/mastering-bitcoin-cash/msbt_0405.png)
+![pubkey to address](/images/mastering-nexa/msbt_0405.png)
 <image-caption>Figure 5. Public key to Nexa address: conversion of a public key into a Nexa address</image-caption>
 
 <anchor name="base58"></anchor>
@@ -234,7 +234,7 @@ The result is composed of three items: a prefix, the data, and a checksum. This 
 
 <anchor name="base58check_encoding"></anchor>
 <spacer></spacer>
-![Base 58 Check Encoding](/images/mastering-bitcoin-cash/msbt_0406.png)
+![Base 58 Check Encoding](/images/mastering-nexa/msbt_0406.png)
 <image-caption>Figure 6. Base58Check encoding: a Base58, versioned, and checksummed format for unambiguously encoding bitcoin data</image-caption>
 <spacer></spacer>
 
@@ -444,7 +444,7 @@ Whereas uncompressed public keys have a prefix of 04, compressed public keys sta
 
 <anchor name="pubkey_compression"></anchor>
 <spacer></spacer>
-![pubkey_compression](/images/mastering-bitcoin-cash/msbt_0407.png)
+![pubkey_compression](/images/mastering-nexa/msbt_0407.png)
 <image-caption>Figure 7. Public key compression</image-caption>
 <spacer></spacer>
 
@@ -662,7 +662,7 @@ Deterministic, or "seeded" wallets are wallets that contain private keys that ar
 
 <anchor name="Type0_wallet"></anchor>
 <spacer></spacer>
-![non-deterministic wallet](/images/mastering-bitcoin-cash/msbt_0408.png)
+![non-deterministic wallet](/images/mastering-nexa/msbt_0408.png)
 <image-caption>Figure 8. Type-0 nondeterministic (random) wallet: a collection of randomly generated keys</image-caption>
 <spacer></spacer>
 
@@ -726,7 +726,7 @@ Deterministic wallets were developed to make it easy to derive many keys from a 
 
 <anchor name="Type2_wallet"></anchor>
 <spacer></spacer>
-![HD wallet](/images/mastering-bitcoin-cash/msbt_0409.png)
+![HD wallet](/images/mastering-nexa/msbt_0409.png)
 <image-caption>Figure 9. Type-2 hierarchical deterministic wallet: a tree of keys generated from a single seed</image-caption>
 
 <tip>
@@ -745,7 +745,7 @@ The process of creating the master keys and master chain code for an HD wallet i
 
 <anchor name="HDWalletFromSeed"></anchor>
 <spacer></spacer>
-![HDWalletFromRootSeed](/images/mastering-bitcoin-cash/msbt_0410.png)
+![HDWalletFromRootSeed](/images/mastering-nexa/msbt_0410.png)
 <image-caption>Figure 10. Creating master keys and chain code from a root seed</image-caption>
 <spacer></spacer>
 
@@ -769,7 +769,7 @@ The parent public key, chain code, and the index number are combined and hashed 
 
 <anchor name="CKDpriv"></anchor>
 <spacer></spacer>
-![ChildPrivateDerivation](/images/mastering-bitcoin-cash/msbt_0411.png)
+![ChildPrivateDerivation](/images/mastering-nexa/msbt_0411.png)
 <image-caption>Figure 11. Extending a parent private key to create a child private key</image-caption>
 <spacer></spacer>
 
@@ -827,7 +827,7 @@ Another common application of this solution is for cold-storage or hardware wall
 
 <anchor name="CKDpub"></anchor>
 <spacer></spacer>
-![ChildPublicDerivation](/images/mastering-bitcoin-cash/msbt_0412.png)
+![ChildPublicDerivation](/images/mastering-nexa/msbt_0412.png)
 <image-caption>Figure 12. Extending a parent public key to create a child public key</image-caption>
 <spacer></spacer>
 
@@ -839,7 +839,7 @@ To counter this risk, HD wallets use an alternative derivation function called _
 
 <anchor name="CKDprime"></anchor>
 <spacer></spacer>
-![ChildHardPrivateDerivation](/images/mastering-bitcoin-cash/msbt_0413.png)
+![ChildHardPrivateDerivation](/images/mastering-nexa/msbt_0413.png)
 <image-caption>Figure 13. Hardened derivation of a child key; omits the parent public key</image-caption>
 <spacer></spacer>
 
@@ -999,7 +999,7 @@ P2SH is not necessarily the same as a multi-signature standard transaction. A P2
 
 Currently, the most common implementation of the P2SH function is the multi-signature address script. As the name implies, the underlying script requires more than one signature to prove ownership and therefore spend funds. The Nexa multi-signature feature is designed to require M signatures (also known as the “threshold”) from a total of N keys, known as an M-of-N multi-sig, where M is equal to or less than N. For example, Bob the coffee shop owner from could use a multi-signature address requiring 1-of-2 signatures from a key belonging to him and a key belonging to his spouse, ensuring either of them could sign to spend a transaction output locked to this address. This would be similar to a “joint account” as implemented in traditional banking where either spouse can spend with a single signature. Or Gopesh, the web designer paid by Bob to create a website, might have a 2-of-3 multi-signature address for his business that ensures that no funds can be spent unless at least two of the business partners sign a transaction.
 
-We will explore how to create transactions that spend funds from P2SH (and multi-signature) addresses in [transactions](/mastering-bitcoin-cash/4-transactions/).
+We will explore how to create transactions that spend funds from P2SH (and multi-signature) addresses in [transactions](/mastering-nexa/4-transactions/).
 
 #### Vanity Addresses
 
@@ -1007,7 +1007,7 @@ Vanity addresses are valid Nexa addresses that contain human-readable messages. 
 
 Once a vanity address matching the desired pattern is found, the private key from which it was derived can be used by the owner to spend bitcoins in exactly the same way as any other address. Vanity addresses are no less or more secure than any other address. They depend on the same Elliptic Curve Cryptography (ECC) and Secure Hash Algorithm (SHA) as any other address. You can no more easily find the private key of an address starting with a vanity pattern than you can any other address.
 
-In [What is Nexa](/mastering-bitcoin-cash/1-what-is-bitcoin-cash/), we introduced Eugenia, a children’s charity director operating in the Philippines. Let’s say that Eugenia is organizing a Nexa fundraising drive and wants to use a vanity Nexa address to publicize the fundraising. Eugenia will create a vanity address that starts with "1Kids" to promote the children’s charity fundraiser. Let’s see how this vanity address will be created and what it means for the security of Eugenia’s charity.
+In [What is Nexa](/mastering-nexa/1-what-is-nexa/), we introduced Eugenia, a children’s charity director operating in the Philippines. Let’s say that Eugenia is organizing a Nexa fundraising drive and wants to use a vanity Nexa address to publicize the fundraising. Eugenia will create a vanity address that starts with "1Kids" to promote the children’s charity fundraiser. Let’s see how this vanity address will be created and what it means for the security of Eugenia’s charity.
 
 #### Generating vanity addresses
 
@@ -1220,12 +1220,12 @@ Paper wallets come in many shapes, sizes, and designs, but at a very basic level
 Paper wallets can be generated easily using a tool such as the client-side JavaScript generator at [Bitcoin.com's Paper wallet generator](https://tools.bitcoin.com/paper-wallet). Put these paper wallets in a fireproof safe and "send" Nexa to their Nexa address, to implement a simple yet highly effective "cold storage" solution.
 
 <spacer></spacer>
-![paper wallet](/images/mastering-bitcoin-cash/msbt_04_paper_wallet.png)
+![paper wallet](/images/mastering-nexa/msbt_04_paper_wallet.png)
 <image-caption>Figure 14. An example of a simple paper wallet from bitcoin.com</image-caption>
 <spacer></spacer>
 
 You can also generate paper wallets with BITBOX's [paper wallet generator](/bitbox/docs/paper).
 
-![bitbox paper wallet](/images/mastering-bitcoin-cash/paper.png)
+![bitbox paper wallet](/images/mastering-nexa/paper.png)
 
 <image-caption>Figure 15. An example of a paper wallet created via BITBOX</image-caption>
